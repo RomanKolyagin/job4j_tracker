@@ -8,21 +8,18 @@ public class Library {
         Book chapterThree = new Book("Chapter Three", 83);
         Book chapterFour = new Book("Chapter Clean Code", 95);
         Book[] books = {chapterOne, chapterTwo, chapterThree, chapterFour};
-        for (int index = 0; index < books.length; index++) {
-            Book book = books[index];
+        for (Book book : books) {
             System.out.println(book.getName() + ", number of pages " + book.getPages());
         }
         System.out.println("---After replacing 0 and 3 book---");
         Book temp = books[0];
         books[0] = books[3];
         books[3] = temp;
-        for (int index = 0; index < books.length; index++) {
-            Book book = books[index];
+        for (Book book : books) {
             System.out.println(book.getName() + ", number of pages " + book.getPages());
         }
         System.out.println("---Searching book with name---");
-        for (int index = 0; index < books.length; index++) {
-            Book book = books[index];
+        for (Book book : books) {
             if ("Chapter Clean Code".equals(book.getName())) {
                 System.out.println(book.getName() + ", number of pages: " + book.getPages());
             }
