@@ -7,8 +7,8 @@ public class Paint {
     }
 
     public static void main(String[] args) {
-        Paint contex = new Paint();
-        contex.draw(new Triangle());
-        contex.draw(new Square());
+        Paint context = new Paint();
+        context.draw(new Triangle());
+        context.draw(new Square());
     }
 }
