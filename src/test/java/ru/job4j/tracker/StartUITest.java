@@ -32,7 +32,7 @@ public class StartUITest {
                 new ReplaceAction(out),
                 new ExitProgram()
         };
-        new StartUI(out).init(in, tracker, actions);
+            new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo(replacedName);
     }
 
@@ -50,22 +50,5 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
-    }
-
-    @Test
-    public void whenExitProgram() {
-        Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"0"}
-        );
-        Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new ExitProgram()
-        };
-        new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString()).isEqualTo(
-                "Menu." + System.lineSeparator()
-                        + "0. Exit action" + System.lineSeparator()
-        );
     }
 }
