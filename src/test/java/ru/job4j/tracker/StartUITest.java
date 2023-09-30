@@ -123,4 +123,30 @@ public class StartUITest {
                         + "1. Exit program" + ln
         );
     }
+
+    @Test
+    public void whenFindByNameActionTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test"));
+        Input in = new StubInput(
+                new String[] {"0", one.getName(), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new FindByName(out),
+                new ExitProgram()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString()).isEqualTo(
+                "Menu." + ln
+                        + "0. Find by name" + ln
+                        + "1. Exit program" + ln
+                        + "=== Find items by name ===" + ln
+                        + one + ln
+                        + "Menu." + ln
+                        + "0. Find by name" + ln
+                        + "1. Exit program" + ln
+        );
+    }
 }
