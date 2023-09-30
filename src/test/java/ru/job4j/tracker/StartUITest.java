@@ -100,9 +100,10 @@ public class StartUITest {
     public void whenShowItemsTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        Item one = tracker.add(new Item("Show all items"));
+        Item one = tracker.add(new Item("test1"));
+        Item two = tracker.add(new Item("test2"));
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), "1"}
+                new String[] {"0", "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new ShowAllAction(out),
@@ -116,6 +117,7 @@ public class StartUITest {
                         + "1. Exit program" + ln
                         + "=== Show all items ===" + ln
                         + one + ln
+                        + two + ln
                         + "Menu." + ln
                         + "0. Show all Items" + ln
                         + "1. Exit program" + ln
