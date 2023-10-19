@@ -1,7 +1,5 @@
 package ru.job4j.early;
 
-package ru.job4j.early;
-
 public class PasswordValidator {
     private static final String[] FORBIDDEN = {"qwerty", "12345", "password", "admin", "user"};
 
@@ -24,10 +22,15 @@ public class PasswordValidator {
      * @param password Пароль
      * @return Вернет пароль или выбросит исключение.
      */
+
     public static String validate(String password) {
-        if ( ... ) {
-            throw new IllegalArgumentException(
-                    ...
+        if (password == null) {
+            throw new IllegalArgumentException("Password can't be null"
+            );
+        }
+
+        if (password.length() < 8 || password.length() > 32) {
+            throw new IllegalArgumentException("Password should be length [8, 32]"
             );
         }
 
@@ -35,8 +38,23 @@ public class PasswordValidator {
         boolean hasLowCase = false;
         boolean hasDigit = false;
         boolean hasSpecial = false;
+
         for (char symbol : password.toCharArray()) {
-            /* Блок проверки принадлежности символа к определенной группе - Character.is ... */
+            if (hasUpCase || Character.isUpperCase(symbol)) {
+                hasUpCase = true;
+            }
+            if (hasLowCase || Character.isLowerCase(symbol)) {
+                hasLowCase = true;
+            }
+            if (hasDigit || Character.isDigit(symbol)) {
+                hasDigit = true;
+            }
+            if (hasSpecial || !Character.isLetterOrDigit(symbol)) {
+                hasSpecial = true;
+            }
+            if (hasUpCase && hasLowCase && hasDigit && hasSpecial) {
+                break;
+            }
         }
         if (!hasUpCase) {
             throw new IllegalArgumentException(
@@ -58,6 +76,15 @@ public class PasswordValidator {
                     "Password should contain at least one special symbol"
             );
         }
+
+        for (String s : FORBIDDEN) {
+            if (password.toLowerCase().contains(s)) {
+                throw new IllegalArgumentException(
+                        "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
+                );
+            }
+        }
+
         return password;
     }
 }
