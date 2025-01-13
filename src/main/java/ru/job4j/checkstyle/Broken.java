@@ -4,14 +4,14 @@ public class Broken {
     private int sizeOfEmpty = 10;
     public String surname;
     public static final String NEW_VALUE = "";
-    public String name;
+    String name;
 
-    public Broken() { }
+    Broken() { }
 
-    public void echo() {
+    void echo() {
     }
 
-    public void media(Object obj) {
+    void media(Object obj) {
         if (obj != null) {
             System.out.println(obj);
         }
