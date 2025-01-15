@@ -8,7 +8,7 @@ public class Student {
     public static void main(String[] args) {
         Student petya = new Student();
         petya.music("Tra ta ta ta ta");
-        Student Vasya = new Student();
-        Vasya.music("Purum purum");
+        Student roman = new Student();
+        roman.music("Purum purum");
     }
 }
