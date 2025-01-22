@@ -6,11 +6,10 @@ import java.time.format.DateTimeFormatter;
 public class StartUI {
     public static void main(String[] args) {
         Item item = new Item();
-        LocalDateTime dateTime = item.getCreated();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String date = dateTime.format(formatter);
-        System.out.println(date);
-
+        LocalDateTime currentDate = item.getCreated();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+        System.out.println(String.format("Текущая дата: %s", currentDate.format(dateTimeFormatter)));
+        Item itemVerifyToString = new Item(45, "Petrov");
+        System.out.println(itemVerifyToString);
     }
 }
