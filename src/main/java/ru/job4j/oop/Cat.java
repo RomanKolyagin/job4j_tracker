@@ -5,16 +5,16 @@ public class Cat {
     private String name;
 
     public void show() {
-        System.out.println("The cat " + this.name + " was eating " + this.food);;
+        System.out.println("The cat " + this.name + " was eating " + this.food);
     }
 
     public void eat(String meat) {
         this.food = meat;
     }
+
     public void giveNick(String nick) {
         this.name = nick;
     }
-
 
     public static void main(String[] args) {
         Cat black = new Cat();

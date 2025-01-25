@@ -1,8 +1,6 @@
 package ru.job4j.oop;
 
 import static java.lang.Math.sqrt;
-import static java.lang.Math.pow;
-
 
 public class Triangle {
     private Point first;
@@ -20,7 +18,7 @@ public class Triangle {
     }
 
     public boolean exist(double ab, double ac, double bc) {
-        return ab + ac > bc && ac + bc > ab && bc + ab > bc ;
+        return ab + ac > bc && ac + bc > ab && bc + ab > bc;
     }
 
     public double area() {
