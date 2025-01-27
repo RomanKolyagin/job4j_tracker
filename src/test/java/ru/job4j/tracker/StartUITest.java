@@ -32,4 +32,14 @@ class StartUITest {
         Item edited = tracker.findById(item.getId());
         assertThat(edited.getName()).isEqualTo("edited item");
     }
+
+    @Test
+    void whenDeletedItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("deleted item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId())};
+        StartUI.deleteItem(new MockInput(answers), tracker);
+        assertThat(tracker.findById(item.getId())).isNull();
+    }
 }
