@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Tracker {
@@ -24,7 +25,7 @@ public class Tracker {
                 rsl.add(item);
             }
         }
-        return List.copyOf(rsl);
+        return rsl;
     }
 
     public Item findById(int id) {
