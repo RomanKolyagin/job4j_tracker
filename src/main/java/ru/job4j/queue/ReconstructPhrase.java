@@ -1,7 +1,6 @@
 package ru.job4j.queue;
 
 import java.util.Deque;
-import java.util.LinkedList;
 
 public class ReconstructPhrase {
     private final Deque<Character> descendingElements;
