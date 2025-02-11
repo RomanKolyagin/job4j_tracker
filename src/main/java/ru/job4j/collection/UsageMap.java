@@ -9,6 +9,7 @@ public class UsageMap {
         map.put("romank@mail.ru", "Kolyagin Roman Olegovich");
         map.put("romank@gmail.com", "Serv Roman Olegovich");
         map.put("romank@bk.ru", "Deryabin Roman Olegovich");
+        map.put("romank@bk.ru", "Petrov Roman Olegovich");
         for (Map.Entry<String, String> entry : map.entrySet()) {
             System.out.println("Email: " + entry.getKey() + " name: " + entry.getValue());
         }
