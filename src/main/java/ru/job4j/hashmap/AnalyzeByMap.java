@@ -1,5 +1,6 @@
 package ru.job4j.hashmap;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,7 +18,15 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
-        return List.of();
+        List<Label> labels = new ArrayList<Label>();
+        int sumScore = 0;
+        for (Pupil pupil : pupils) {
+            for (Subject subject : pupil.subjects()) {
+                sumScore += subject.score();
+            }
+            labels.add(new Label(pupil.name(), (double) sumScore / pupils.size()));
+        }
+        return labels;
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
