@@ -15,7 +15,7 @@ public class TestSortAscByName {
         Item test2 = new Item("Orange");
         Item test3 = new Item("Potato");
         List<Item> items = Arrays.asList(test2, test1, test3);
-        Collections.sort(items);
+        items.sort(new ItemAscByName());
         List<Item> expected = Arrays.asList(test1, test2, test3);
         assertThat(items).isEqualTo(expected);
     }
@@ -26,7 +26,7 @@ public class TestSortAscByName {
         Item test2 = new Item("Orange");
         Item test3 = new Item("Potato");
         List<Item> items = Arrays.asList(test2, test1, test3);
-        Collections.sort(items);
+        items.sort(new ItemDescByName());
         List<Item> expected = Arrays.asList(test3, test2, test1);
         assertThat(items).isEqualTo(expected);
     }
