@@ -13,6 +13,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -33,6 +34,11 @@
             <artifactId>assertj-core</artifactId>
             <version>3.23.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>${jacoco-maven-plugin.version}</version>
         </dependency>
     </dependencies>
     <build>
