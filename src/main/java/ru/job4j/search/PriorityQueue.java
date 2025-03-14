@@ -4,7 +4,7 @@ import java.util.LinkedList;
 /**
  * Класс описывает работу простейшей очереди по приоритету, которая работает
  * по принципу FIFO (first in - first out)
- * @author ROMAN KOLYAGIN
+ * @author STAS KOROBEYNIKOV
  * @version 1.0
  */
 public class PriorityQueue {
