@@ -18,27 +18,54 @@ public class Account {
      */
     private double balance;
 
+    /**
+     * Создание счета пользователя
+     * @param requisite реквизиты счета
+     * @param balance баланс на счете
+     */
     public Account(String requisite, double balance) {
         this.requisite = requisite;
         this.balance = balance;
     }
 
+    /**
+     * Метод позволяет получить реквизиты счета
+     * @return requisite реквизиты счета
+     */
     public String getRequisite() {
         return requisite;
     }
 
+    /**
+     * Метод позволяет присваивать реквизиты счета
+     * @param requisite реквизиты счета
+     */
     public void setRequisite(String requisite) {
         this.requisite = requisite;
     }
 
+    /**
+     * Метод позволяет получить баланс счета
+     * @return balance баланс счета
+     */
     public double getBalance() {
         return balance;
     }
 
+    /**
+     * Метод позволяет присвоить баланс счета
+     * @return balance баланс счета
+     */
     public void setBalance(double balance) {
         this.balance = balance;
     }
 
+    /**
+     * Метод принимает объект и позволяет сравнить его с текущим
+     * @param o входящий объект
+     * @return вернет true, если объекты равны. В противном случае - false
+     * Возвращает результат сравнения по реквизиту счета
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -51,6 +78,10 @@ public class Account {
         return Objects.equals(requisite, account.requisite);
     }
 
+    /**
+     * Метод возвращает хеш-код реквизитов счета
+     * @return возвращает хеш-код реквизитов счета
+     */
     @Override
     public int hashCode() {
         return Objects.hash(requisite);
